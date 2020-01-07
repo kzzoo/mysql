@@ -1,0 +1,10 @@
+mysql DBMS是CS结构，客户端(命令行等）发送请求到服务器，服务器返回结果。
+
+show databases;
+use <database name>;
+show tables;
+show columns from <table name>; or describe <table name>;
+
+help show;
+
+
