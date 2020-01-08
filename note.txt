@@ -1,6 +1,9 @@
 注意：
 1.结束SQL语句必须以分号分隔；
 2.distinct应用于所有列而不只是前置它的列；
+3.desc关键字只应用到位于其前面的列名；
+4.若要区分a,A排序用简单的order by语句做不到，需要数据库管理员的帮助；
+5.limit必须位于order by之后;
 
 mysql DBMS是CS结构，客户端(命令行等）发送请求到服务器，服务器返回结果。
 
@@ -17,4 +20,5 @@ select distinct <column name> from <table name>; 检索具有不同值的行
 select <column name> from <table name> limit <number>;
 select <column name> from <table name> limit <n1,n2>; 检索从n1行开始的n2行
 select <table name>.<column name> from <database name>.<table name>;
+select <column name> from <table name> order by <column name>; +desc 降序排序
 
