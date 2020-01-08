@@ -10,7 +10,11 @@
 	between		在指定的两个值之间
 8.where在执行匹配字符串时默认不区分大小写,且需使用‘’；
 9.在使用between and时小的值在前，大的值在后
-
+10.在where中，and比or优先级高；
+11.in在where子句中用来指定匹配值的清单的关键字，功能与or相当；
+12.like '%anvil'如果在保存词anvil时后面有一个或多个空格，则将不会匹配他们；
+13.%不能匹配null;
+14.正则表达式可以加binary区分大小写
 
 mysql DBMS是CS结构，客户端(命令行等）发送请求到服务器，服务器返回结果。
 
@@ -31,3 +35,13 @@ select <column name> from <table name> order by <column name>; +desc 降序排�
 select <column name> from <table name> where <column=value>;
 select <column name> from <table name> where <column name> between <v1> and <v2>;
 select <column name> from <table name> where <column name> is null;
+select <column name> from <table name> where <column name> in (v1,v2,v3);
+select <column name> from <table name> where <column name> not in (v1,v2,v3);
+
+通配符
+select <column name> from <table name> where <column name> like '%something%';匹配任意多个字符包含零个
+select <column name> from <table name> where <column name> like '_omething'; 匹配单个字符
+
+正则表达式
+select <column name> from <table name> where <column name> regexp 'expression';
+select <column name> from <table name> where <column name> regexp binary 'expression' 区分大小写
