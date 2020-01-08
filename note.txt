@@ -1,3 +1,7 @@
+注意：
+1.结束SQL语句必须以分号分隔；
+2.distinct应用于所有列而不只是前置它的列；
+
 mysql DBMS是CS结构，客户端(命令行等）发送请求到服务器，服务器返回结果。
 
 show databases;
@@ -7,4 +11,10 @@ show columns from <table name>; or describe <table name>;
 
 help show;
 
+select <column name> from <table name>;
+select * from <table name>;
+select distinct <column name> from <table name>; 检索具有不同值的行
+select <column name> from <table name> limit <number>;
+select <column name> from <table name> limit <n1,n2>; 检索从n1行开始的n2行
+select <table name>.<column name> from <database name>.<table name>;
 
