@@ -1,9 +1,16 @@
 注意：
 1.结束SQL语句必须以分号分隔；
-2.distinct应用于所有列而不只是前置它的列；
+2.distinct应用于所有列而不只是前置它的列；存疑？？？？？
 3.desc关键字只应用到位于其前面的列名；
 4.若要区分a,A排序用简单的order by语句做不到，需要数据库管理员的帮助；
 5.limit必须位于order by之后;
+6.order by位于where之后；
+7.where子句操作符易忘:
+	！= or <>	不等于
+	between		在指定的两个值之间
+8.where在执行匹配字符串时默认不区分大小写,且需使用‘’；
+9.在使用between and时小的值在前，大的值在后
+
 
 mysql DBMS是CS结构，客户端(命令行等）发送请求到服务器，服务器返回结果。
 
@@ -21,4 +28,6 @@ select <column name> from <table name> limit <number>;
 select <column name> from <table name> limit <n1,n2>; 检索从n1行开始的n2行
 select <table name>.<column name> from <database name>.<table name>;
 select <column name> from <table name> order by <column name>; +desc 降序排序
-
+select <column name> from <table name> where <column=value>;
+select <column name> from <table name> where <column name> between <v1> and <v2>;
+select <column name> from <table name> where <column name> is null;
